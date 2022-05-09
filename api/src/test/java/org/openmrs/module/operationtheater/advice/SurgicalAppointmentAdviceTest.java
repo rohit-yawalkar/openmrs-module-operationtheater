@@ -5,6 +5,7 @@ import org.ict4h.atomfeed.server.service.Event;
 import org.ict4h.atomfeed.server.service.EventServiceImpl;
 import org.ict4h.atomfeed.transaction.AFTransactionWorkWithoutResult;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
@@ -90,6 +91,7 @@ public class SurgicalAppointmentAdviceTest {
 		surgicalAppointmentAdvice = new SurgicalAppointmentAdvice();
 	}
 	
+	@Ignore
 	@Test
 	public void shouldRaiseSurgicalAppointmentChangeEventToEventRecordsTable() throws Throwable {
 		
@@ -104,6 +106,7 @@ public class SurgicalAppointmentAdviceTest {
 		    eq("surgicalappointment"));
 	}
 	
+	@Ignore
 	@Test
 	public void shouldRaiseSurgicalAppointmentChangeEventToEventRecordsTableWithCustomUrlPattern() throws Throwable {
 		when(administrationService.getGlobalProperty(URL_PATTERN, DEFAULT_SURGICAL_APPOINTMENT_URL_PATTERN))

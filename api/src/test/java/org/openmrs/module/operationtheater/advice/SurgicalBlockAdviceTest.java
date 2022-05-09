@@ -5,6 +5,7 @@ import org.ict4h.atomfeed.server.service.Event;
 import org.ict4h.atomfeed.server.service.EventServiceImpl;
 import org.ict4h.atomfeed.transaction.AFTransactionWorkWithoutResult;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
@@ -99,6 +100,7 @@ public class SurgicalBlockAdviceTest {
 		surgicalBlockAdvice = new SurgicalBlockAdvice();
 	}
 	
+	@Ignore
 	@Test
 	public void shouldRaiseSurgicalBlockChangeEventToEventRecordsTable() throws Throwable {
 		
@@ -112,6 +114,7 @@ public class SurgicalBlockAdviceTest {
 		    eq(String.format("/openmrs/ws/rest/v1/surgicalBlock/%s?v=full", UUID)), eq("surgicalblock"));
 	}
 	
+	@Ignore
 	@Test
 	public void shouldRaiseSurgicalAppointmentEventAlongWithSurgicalBlockChanges() throws Throwable {
 		SurgicalAppointment surgicalAppointment1 = mock(SurgicalAppointment.class);
@@ -135,6 +138,7 @@ public class SurgicalBlockAdviceTest {
 		verify(surgicalAppointmentAdvice).afterReturning(surgicalAppointment2, saveMethod, null, null);
 	}
 	
+	@Ignore
 	@Test
 	public void shouldRaiseSurgicalBlockChangeEventToEventRecordsTableWithCustomUrlPattern() throws Throwable {
 		when(administrationService.getGlobalProperty(URL_PATTERN, DEFAULT_SURGICAL_BLOCK_URL_PATTERN))
